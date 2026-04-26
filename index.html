@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUSIÓN - La radio de la costa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="media/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="media/fusion1.png" height="60px" alt="Fusion Radio">
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#programacion">Programación</a></li>
+                    <li><a href="#trabajo">Nuestro Trabajo</a></li>
+                    <li><a href="#publicidad">Publicidad</a></li>
+                    <li><a href="#patrocinadores">Patrocinadores</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="mini-player">
+                <div class="track-info">
+                    <span class="label">ON AIR:</span>
+                    <span class="track-name" id="currentTrack">Cargando señal...</span>
+                </div>
+                <div class="player-controls">
+                    <button id="playPauseBtn" class="btn-play"><i class="fas fa-play"></i></button>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.8">
+                    </div>
+                </div>
+                <audio id="radioAudio" preload="none"></audio>
+            </div>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-section">
+            <div class="container hero-content">
+                <h5>100% ÉXITOS 24/7</h5>
+                <h1 class="graffiti-text">LA RADIO DE LA COSTA</h1>
+                <button class="btn btn-primary" onclick="togglePlay()">ESCUCHAR EN VIVO</button>
+            </div>
+        </section>
+
+        <section id="programacion" class="section-pad">
+            <div class="container">
+                <h2 class="section-title graffiti-text">Programación</h2>
+                <div id="tabsContainer" class="schedule-tabs"></div>
+                <div id="scheduleList" class="schedule-list"></div>
+            </div>
+        </section>
+
+        <section id="trabajo" class="section-pad bg-light-blue">
+            <div class="container">
+                <h2 class="section-title graffiti-text">Nuestro trabajo</h2>
+                <div class="work-content">
+                    <h3 style="color: var(--text-primary); font-size: 2.2rem; font-weight: 800; margin-bottom: 25px;">Tu participación es muy importante.</h3>
+                    
+                    <p>Desde el grupo FUSIÓN damos cobertura informativa, divulgación de eventos y eventos culturales formativos que desde instituciones, entidades, asociaciones y colectivos nos hacen llegar.</p>
+                    <p>El funcionamiento de Fusión FM se desarrolla con aportaciones económicas de nuestros socios.</p>
+                    <p>El grupo FUSIÓN es un medio de comunicación sin ánimo de lucro, el mantenimiento de estas instalaciones: la energía eléctrica, comunicaciones telefónicas y telemáticas, streamings, equipo técnico electrónico, mobiliario, material fungible, desplazamientos, equipos móviles, etc. tienen una cuantía anual muy alta.</p>
+                    <p>Por todos estos motivos, desde el grupo FUSIÓN queremos solicitar la colaboración mediante donaciones dinerarias en la cuenta bancaria que nuestra entidad tiene en Triodos Bank o bien desde PayPal para poder seguir desarrollando esta tarea de comunicación social.</p>
+                    
+                    <p style="font-weight: 700; margin-top: 20px;">Muchas gracias.</p>
+
+                    <div class="bank-info">
+                        <h4>Triodos Bank</h4>
+                        <p class="account-number">ES81 1491 0001 2930 0007 6820</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publicidad" class="section-pad">
+            <div class="container">
+                <h2 class="section-title graffiti-text">Publicidad</h2>
+                <div class="ad-grid">
+                    <div class="ad-left">
+                        <h3>Si deseas anunciarte con nosotros, ponte en contacto para recibir más información.</h3>
+                    </div>
+                    <div class="ad-right">
+                        <h4>¿Quieres que tu negocio suene en Fusión FM?</h4>
+                        <p>Anúnciate en Fusión FM y haz que tu marca llegue directamente a miles de oyentes cada día. Somos la emisora cultural que comparte información y entretenimiento a sus oyentes, contamos con más de 40 años de experiencia en comunicación audiovisual y una sólida trayectoria en la creación de contenidos que conectan con el público.</p>
+                        
+                        <p style="margin-top: 20px; font-weight: 700;">En Fusión FM te ofrecemos:</p>
+                        <ul>
+                            <li><i class="fas fa-broadcast-tower"></i> Difusión local, regional o nacional según tus necesidades.</li>
+                            <li><i class="fas fa-bullseye"></i> Campañas personalizadas, adaptadas al perfil de tu cliente ideal.</li>
+                            <li><i class="fas fa-chart-line"></i> Asesoramiento profesional desde la idea creativa hasta la producción del anuncio.</li>
+                            <li><i class="fas fa-handshake"></i> Tarifas competitivas y formatos flexibles.</li>
+                        </ul>
+                        
+                        <p>Nuestra audiencia confía en nosotros. ¿Y tú, quieres que también confíen en tu marca?</p>
+                        <p style="font-weight: 700; margin-top: 10px;"><i class="fas fa-thumbs-up" style="color: var(--accent); margin-right: 5px;"></i> Contáctanos hoy mismo y haz que tu negocio se escuche donde importa.</p>
+                        
+                        <div class="ad-contact">
+                            <p>Para conocer las opciones de publicidad escribe a:</p>
+                            <a href="mailto:fusionfm@fusionfm.es" class="contact-link"><i class="fas fa-envelope"></i> fusionfm@fusionfm.es</a>
+                            <a href="tel:+34671541606" class="contact-link"><i class="fas fa-phone"></i> +34 671 541606</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patrocinadores" class="section-pad bg-light-blue">
+            <div class="container">
+                <h2 class="section-title graffiti-text">Patrocinadores</h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 40px; font-size: 1.1rem;">
+                    Gracias a las organizaciones que confían y colaboran con nosotros.
+                </p>
+                <div class="sponsors-grid">
+                    
+                    <a href="https://autismo.org.es/" target="_blank" rel="noopener noreferrer" class="sponsor-link">
+                        <img src="media/AE.png" alt="Autismo España" class="sponsor-logo">
+                    </a>
+
+                    <a href="https://unoentrecienmil.org/?utm_source=google&utm_medium=grants&utm_campaign=brand&gad_source=1&gad_campaignid=21665486323&gbraid=0AAAAAC238gJnlV3A4AsFZYDsqF1IaCbzw&gclid=CjwKCAjwzLHPBhBTEiwABaLsSr9-xDXN_OPOMc3MXShEZO9-tAeolf5s-2DNQaBJeWVJ3D0CREnepRoCgjsQAvD_BwE" target="_blank" rel="noopener noreferrer" class="sponsor-link">
+                        <img src="media/unoentrecienmil.png" alt="Uno entre cien mil" class="sponsor-logo">
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <img src="media/fusion1.png" height="70px" alt="Fusion Radio">
+                <p>La mejor experiencia de radio online. Música, noticias y estilo urbano 24/7.</p>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/fusionfmlaradiodelacosta?igsh=MXdibGluYWNpMzMzdQ==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/fusion70647" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/share/1Dh7FLmULx/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://t.me/boost?c=3564410061" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+                    <a href="https://substack.com/@fusinfm?utm_source=share&utm_medium=android&r=7pzbg2" target="_blank" rel="noopener noreferrer"><i class="fas fa-bookmark"></i></a>
+                    <a href="https://youtube.com/@fusionfm2024?si=y9Mac-AEV09xE7yX" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@fusion.fm.barcelona" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://chat.whatsapp.com/HMfDMaD1rwu1ZfdYMHt6MA?mode=gi_t" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div> 
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-envelope"></i> fusionfm@fusionfm.es</p>
+                <p><i class="fas fa-phone"></i> +34 671 541606</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FUSIÓN Radio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
